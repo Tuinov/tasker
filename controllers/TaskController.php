@@ -21,14 +21,7 @@ class TaskController extends Controller
         ]);
     }
 
-    public function actionOrder() {
-       $order = $_GET['b'];
-        $tasks = (new Tasks())->queryAll($order);
-        echo $this->render('index', [
-            'tasks' => $tasks
-        ]);
-    }
-
+    
     public function actionEdit()
     {
         $id = $_GET['id'];
