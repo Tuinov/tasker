@@ -7,16 +7,19 @@ use app\model\Tasks;
 
 class Db
 {
-    public $connection;
+    public $connection = null;
 
     // подключение к бд
     public function getConnection()
     {
-        $dsn = DB_DRIVER . ":host=" . HOST . ";port=" . PORT . ";dbname=" . DB;
-        $this->connection = new \PDO($dsn, USER, PASS);
+        if ($this->connection == null) {
+            $dsn = DB_DRIVER . ":host=" . HOST . ";port=" . PORT . ";dbname=" . DB;
+            $this->connection = new \PDO($dsn, USER, PASS);
 
-        // режим получения данных по умолчанию - режим ассоциативного массива
-        // $this->connection->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
+            // режим получения данных по умолчанию - режим ассоциативного массива
+            // $this->connection->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
+        }
+
         return $this->connection;
     }
 

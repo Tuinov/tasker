@@ -12,8 +12,9 @@ class TaskController extends Controller
     public function actionIndex()
     {
         $page = ($_GET['page'] * 3) ?: 0;
+        $order = $_GET['b'] ?: 'id';
         $count = (new Tasks())->queryCount();
-        $tasks = (new Tasks)->queryAll('id', $page);
+        $tasks = (new Tasks)->queryAll($order, $page);
         echo $this->render('index', [
             'tasks' => $tasks,
             'count' => $count,

@@ -6,11 +6,11 @@
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th><a href="/?c=task&a=order&b=id">id</a></th>
-            <th><a href="/?c=task&a=order&b=name_user">name</a></th>
-            <th><a href="/?c=task&a=order&b=email">email</a></th>
-            <th><a href="/?c=task&a=order&b=task_text">task</a></th>
-            <th><a href="/?c=task&a=order&b=done">done</a></th>
+            <th><a href="/?c=task&a=index&b=id">id</a></th>
+            <th><a href="/?c=task&a=index&b=name_user">name</a></th>
+            <th><a href="/?c=task&a=index&b=email">email</a></th>
+            <th><a href="/?c=task&a=index&b=task_text">task</a></th>
+            <th><a href="/?c=task&a=index&b=done">done</a></th>
             <? if ($_COOKIE['user'] == 'admin'): ?>
             <th><a href="/?c=task&a=edit">edit</a></th>
             <? endif; ?>
